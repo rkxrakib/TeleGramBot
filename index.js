@@ -19,7 +19,7 @@ const { verifyCaptcha } = require('./utils/captcha');
 const { formatWithUSD } = require('./utils/helpers');
 
 // Initialize Web3 for BSC
-const Web3 = require("web3");
+const ট = require("web3");
 const web3 = new Web3(process.env.BSC_RPC_URL);
 const USDT_CONTRACT_ABI = [
   // Minimal ABI for ERC20 transfer & balanceOf
@@ -41,10 +41,8 @@ const USDT_CONTRACT_ABI = [
     type: "function"
   }
 ];
-const usdtContract = new web3.eth.Contract(
-  USDT_CONTRACT_ABI,
-  process.env.USDT_CONTRACT_ADDRESS
-);
+const Web3 = require("web3");
+const web3 = new Web3(process.env.BSC_RPC_URL);
 
 const bot = new Telegraf(process.env.TELEGRAM_BOT_TOKEN);
 
