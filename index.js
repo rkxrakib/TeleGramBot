@@ -19,7 +19,8 @@ const { verifyCaptcha } = require('./utils/captcha');
 const { formatWithUSD } = require('./utils/helpers');
 
 // Initialize Web3 for BSC
-const web3 = new Web3(new Web3.providers.HttpProvider(process.env.BSC_RPC_URL));
+const Web3 = require("web3");
+const web3 = new Web3(process.env.BSC_RPC_URL);
 const USDT_CONTRACT_ABI = [
   // Minimal ABI for ERC20 transfer & balanceOf
   {
